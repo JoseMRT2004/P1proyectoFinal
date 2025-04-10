@@ -16,7 +16,9 @@ obj/
 .env
 .env.local
 .env.*.local
+appsettings.Development.json
 
 # Archivos generados que no son necesarios
 *.log
 *.cache
+

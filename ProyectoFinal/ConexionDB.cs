@@ -1,12 +1,14 @@
 using Microsoft.Data.SqlClient;  
 using System;
+using System.Configuration;
 
 namespace Conexionbd
 {
     public class ConexionDB
     {
        
-        private static readonly string cadenaConexion = "Server=Laptop12;Database=agendaDeContactos;Trusted_Connection=True;Encrypt=False;";
+
+static string cadenaConexion = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
 
        
         private static SqlConnection conexion;
