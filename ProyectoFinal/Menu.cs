@@ -7,11 +7,10 @@ public static class Menu
 {
     private static int selectedIndex = 0;
     private static readonly string[] options = [
-            " • ",              // * Aqui pon las opciones disponibles para interactuar
-            " • ",                  // * [Agregar - Borrar - Actualizar ]
-            " • ",
-            " • ",
-            " • ",
+            " • Agregar Contacto ",              // * Aqui pongo las opciones disponibles para interactuar
+            " • Modificar Contacto ",                  // * [Agregar - Borrar - Actualizar - Mostrar]
+            " • Eliminar Contacto",
+            " • Mostrar Contactos.",
             " • Salir 🔚"
     ];
 
