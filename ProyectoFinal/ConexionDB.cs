@@ -22,7 +22,6 @@ static string cadenaConexion = ConfigurationManager.ConnectionStrings["MiConexio
 
             try
             {
-                
                 if (conexion.State == System.Data.ConnectionState.Closed)
                 {
                     conexion.Open();
@@ -30,7 +29,7 @@ static string cadenaConexion = ConfigurationManager.ConnectionStrings["MiConexio
             }
             catch (Exception)
             {
-                
+                System.Console.WriteLine("Error");
             }
 
             return conexion;
