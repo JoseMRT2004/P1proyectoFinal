@@ -46,7 +46,7 @@ public class ContactoDAO
     {
         using (SqlConnection conexion = ConexionDB.ObtenerConexion())
         {
-            string query = "DELETE FROM Contacto WHERE Id = @Id";
+            string query = "DELETE FROM Contacto WHERE ID_CONTACTO = @Id";
             SqlCommand comando = new SqlCommand(query,conexion);
             comando.Parameters.AddWithValue("@Id", id);
 
