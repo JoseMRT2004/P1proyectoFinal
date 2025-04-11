@@ -11,4 +11,11 @@ public class Contacto
         this.Email = email;
         this.Telefono = telefono;
     }
+    public Contacto(int id,string nombre, string email, string telefono)
+    {
+        this.id = id;
+        this.Nombre = nombre;
+        this.Email = email;
+        this.Telefono = telefono;
+    }
 }

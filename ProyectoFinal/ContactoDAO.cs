@@ -30,14 +30,15 @@ public class ContactoDAO
     {
         using (SqlConnection conexion = ConexionDB.ObtenerConexion())
         {
-            string query = "UPDATE Contacto SET Nombre = @Nombre, Email = @Email, Telefono = @Telefono WHERE Id = @Id";
+            string query = "UPDATE Contacto SET Nombre = @Nombre, Email = @Email, Telefono = @Telefono WHERE ID_CONTACTO = @Id";
             SqlCommand comando = new SqlCommand(query,conexion);
             comando.Parameters.AddWithValue("@Nombre", c.Nombre);
             comando.Parameters.AddWithValue("@Email", c.Email);
             comando.Parameters.AddWithValue("@Telefono", c.Telefono);
+            comando.Parameters.AddWithValue("@Id", c.id);
 
 
-            return (comando.ExecuteNonQuery() > 0) ? true : false;
+            return comando.ExecuteNonQuery() > 0;
         }
     }
 
