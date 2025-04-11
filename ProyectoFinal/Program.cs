@@ -49,7 +49,7 @@
                 case 4:
                     foreach (var c in contactos.ListarContactos())
                     {
-                        Console.WriteLine($"Nombre: {c.Nombre} | Email: {c.Email} | Teléfono: {c.Telefono}");
+                        Console.WriteLine($"ID: {c.id} |Nombre: {c.Nombre} | Email: {c.Email} | Teléfono: {c.Telefono}");
                     }
 
                     Console.ReadKey();
