@@ -2,44 +2,63 @@
 {
     static void Main()
     {
-        Console.OutputEncoding = System.Text.Encoding.UTF8; //  ! Configura la terminal para soportar caracteres especiales
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
+        ContactoDAO contactos = new ContactoDAO();
+        bool salir = true;
+        string Nombre, Email, telefono;
 
-        bool salir = false;
-        while (!salir)
+        do
         {
-            int opcion = Menu.MostrarMenu(); // Captura la opción seleccionada
 
-
-            /*
-        Flujo del programa:
-        1. Se muestra el menú y el usuario selecciona una opción.
-        2. Dependiendo de la opción seleccionada, se ejecuta la lógica correspondiente:
-            - Opción 1: Agregar contacto
-            - Opción 2: Modificar contacto
-            - Opción 3: Eliminar contacto
-            - Opción 4: Mostrar contactos
-            - Opción 5: Termina el programa
-        3. Si se selecciona la opción de salir, el programa termina y muestra un mensaje de despedida.
-        */
+            int opcion = Menu.MostrarMenu(); 
 
             switch (opcion)
             {
                 case 1:
+                    System.Console.WriteLine("Nombre: ");
+                    Nombre = Console.ReadLine()!;
+                    System.Console.WriteLine("Email: ");
+                    Email = Console.ReadLine()!;
+                    System.Console.WriteLine("Telefono: ");
+                    telefono = Console.ReadLine()!;
+
+                    Contacto contacto = new Contacto(Nombre, Email, telefono);
+                    System.Console.WriteLine(contactos.AgregarContacto(contacto) ? "Usuario agregado correctamente" : "No se pudo agregar intente de nuevo");
                     break;
                 case 2:
+                    System.Console.WriteLine("Nombre: ");
+                    Nombre = Console.ReadLine()!;
+                    System.Console.WriteLine("Email: ");
+                    Email = Console.ReadLine()!;
+                    System.Console.WriteLine("Telefono: ");
+                    telefono = Console.ReadLine()!;
+                    Contacto contactoModificado = new Contacto(Nombre, Email, telefono);
+
+                    contactos.ModificarContacto(contactoModificado);
                     break;
                 case 3:
+                    System.Console.WriteLine("Elimine el Usuario con el ID: ");
+                    int EliminarContacto = int.Parse(Console.ReadLine()!);
+                    contactos.EliminarContacto(EliminarContacto);
                     break;
                 case 4:
+                    foreach (var c in contactos.ListarContactos())
+                    {
+                        Console.WriteLine($"Nombre: {c.Nombre} | Email: {c.Email} | Teléfono: {c.Telefono}");
+                    }
+                    
+                    Console.ReadKey();
                     break;
                 case 5:
-                    salir = true;
+                    salir = false;
                     break;
                 default:
                     break;
             }
             Console.Clear();
+
         }
+        while (salir);
 
         Console.WriteLine("¡Gracias por usar la Agenda de Contactos!");
     }
