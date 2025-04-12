@@ -67,6 +67,7 @@ public class ContactoDAO
                 while (lector.Read())
             {
                 lista.Add(new Contacto(
+                    Convert.ToInt32(lector["ID_CONTACTO"]),
                     lector["Nombre"].ToString()!,
                     lector["Email"].ToString()!,
                     lector["Telefono"].ToString()!
