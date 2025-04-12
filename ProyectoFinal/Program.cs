@@ -9,6 +9,7 @@
 
         do
         {
+            Console.Clear();
 
             int opcion = Menu.MostrarMenu();
 
@@ -60,8 +61,6 @@
                 default:
                     break;
             }
-            Console.Clear();
-
         }
         while (salir);
 

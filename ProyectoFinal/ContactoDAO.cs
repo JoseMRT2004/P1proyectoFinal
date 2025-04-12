@@ -22,7 +22,6 @@ public class ContactoDAO
             comando.Parameters.AddWithValue("@Telefono", c.Telefono);
 
             return comando.ExecuteNonQuery() > 0;
-         
         }
     }
 
