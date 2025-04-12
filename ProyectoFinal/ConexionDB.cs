@@ -8,7 +8,7 @@ namespace Conexionbd
     {
 
 
-        static string cadenaConexion = "Server=BERSERK;Database=agendaDeContactos;Trusted_Connection=True;Encrypt=False;";
+        static string cadenaConexion = "Server=DESKTOP-91VF8H7\\SQLEXPRESS;Database=agendaDeContactos;Trusted_Connection=True;Encrypt=False;";
 
 
         private static SqlConnection conexion;
