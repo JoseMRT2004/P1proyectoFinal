@@ -7,11 +7,11 @@ public static class Menu
 {
     private static int selectedIndex = 0;
     private static readonly string[] options = [
-            " • Agregar Contacto ",              // * Aqui pongo las opciones disponibles para interactuar
-            " • Modificar Contacto ",                  // * [Agregar - Borrar - Actualizar - Mostrar]
-            " • Eliminar Contacto",
-            " • Mostrar Contactos.",
-            " • Salir 🔚"
+            "    • Agregar Contacto ",              // * Aqui pongo las opciones disponibles para interactuar
+            "    • Modificar Contacto ",                  // * [Agregar - Borrar - Actualizar - Mostrar]
+            "    • Eliminar Contacto",
+            "    • Mostrar Contactos.",
+            "    • Salir 🔚"
     ];
 
     // ! Cambia el color del menu Principal - Son modificables  
@@ -91,7 +91,7 @@ public static class Menu
         Console.WriteLine(@"                                                 ╚═══════════════════════════════════════════════════╝
 
                                     ═══════════════════════════════════════════════════════════════════════════════════
-                                             💡 Usa las Flechas para Navegar y Enter para Seleccionar 💡
+                                              💡 Usa las Flechas para Navegar y Enter para Seleccionar 💡
                                  ═══════════════════════════════════════════════════════════════════════════════════════════
                                     ");
         Console.ResetColor();
