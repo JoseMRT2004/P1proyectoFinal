@@ -1,10 +1,8 @@
-using System.Reflection.Metadata.Ecma335;
 using Microsoft.Data.SqlClient;
 public class ContactoDAO : IValidacion
 {
     public ContactoDAO()
     {
-        ConexionDB.ObtenerConexion();
     }
 
     public bool AgregarContacto(Contacto c)
@@ -14,15 +12,18 @@ public class ContactoDAO : IValidacion
         {
             return false;
         }
-        using (SqlConnection conexion = ConexionDB.ObtenerConexion())
+        else
         {
-            string query = "INSERT INTO Contacto ( Nombre, Email, Telefono) VALUES (@Nombre, @Email, @Telefono)";
-            SqlCommand comando = new SqlCommand(query, conexion);
-            comando.Parameters.AddWithValue("@Nombre", c.Nombre);
-            comando.Parameters.AddWithValue("@Email", c.Email);
-            comando.Parameters.AddWithValue("@Telefono", telefonoSinCaracteres);
+            using (SqlConnection conexion = ConexionDB.ObtenerConexion())
+            {
+                string query = "INSERT INTO Contacto ( Nombre, Email, Telefono) VALUES (@Nombre, @Email, @Telefono)";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                comando.Parameters.AddWithValue("@Nombre", c.Nombre);
+                comando.Parameters.AddWithValue("@Email", c.Email);
+                comando.Parameters.AddWithValue("@Telefono", telefonoSinCaracteres);
 
-            return comando.ExecuteNonQuery() > 0;
+                return comando.ExecuteNonQuery() > 0;
+            }
         }
     }
 
